@@ -1,0 +1,82 @@
+{
+  "sentenceList": [
+    {
+      "actorID": "_liquirizia",
+      "sentenceID": "0",
+      "text": "Mi sembra di averti già vista, sbaglio?",
+      "choices": [
+        {
+          "text": "Sì, ti sbagli di grosso, sparisci!",
+          "nextSentence": "Sparisci"
+        },
+        {
+          "text": "Non saprei, dove mi avresti vista scusa?",
+          "nextSentence": "Non saprei"
+        },
+        {
+          "text": "No, non sbagli! Sono Debora, ricordi?",
+          "nextSentence": "Sono debora"
+        }
+      ]
+    },
+    {
+      "actorID": "_liquirizia",
+      "sentenceID": "Sparisci",
+      "text": "Peccato, volevo una pizza. Ciao.",
+      "choices": [
+        {
+          "text": "Chiudi",
+          "nextSentence": ""
+        }
+      ]
+    },
+    {
+      "actorID": "_liquirizia",
+      "sentenceID": "Non saprei",
+      "text": "A quell'evento, con tanta gente e poche ore di sonno, ma forse mi sbaglio. Me ne vado, ciao.",
+      "choices": [
+        {
+          "text": "Chiudi",
+          "nextSentence": ""
+        }
+      ]
+    },
+    {
+      "actorID": "_liquirizia",
+      "sentenceID": "Sono debora",
+      "text": "AMICA MIA, MI SEI MANCATA!!!",
+      "choices": [
+        {
+          "text": "Anche tu mi sei mancata liquirizia mia :P",
+          "nextSentence": "Mi sei mancata"
+        },
+        {
+          "text": "Tu no, brutta stronza. Fuori dalle palle adesso >:(",
+          "nextSentence": "Brutta stronza"
+        }
+      ]
+    },
+    {
+      "actorID": "_liquirizia",
+      "sentenceID": "Mi sei mancata",
+      "text": "* ABBRACCIO *",
+      "choices": [
+        {
+          "text": "Chiudi",
+          "nextSentence": ""
+        }
+      ]
+    },
+    {
+      "actorID": "_liquirizia",
+      "sentenceID": "Brutta stronza",
+      "text": "* PIANGE *",
+      "choices": [
+        {
+          "text": "Chiudi",
+          "nextSentence": ""
+        }
+      ]
+    }
+  ]
+}
