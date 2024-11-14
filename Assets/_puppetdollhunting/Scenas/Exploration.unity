@@ -9279,7 +9279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c248312bb85be9c44a63466d1c37313c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: f4563d29148df224ba9b2a098c609f44, type: 3}
+  _icon: {fileID: 21300000, guid: 31937203cb0354249893041cb01f2b1c, type: 3}
   _actorName: Liquirizia
   _actorType: 1
   _actorID: _liquirizia
