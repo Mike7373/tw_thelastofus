@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +11,7 @@ public class DialogueBox : MonoBehaviour
     public TMP_Text dialogueText;
     public GameObject _choiceBox;
     [SerializeField] private GameObject _arrow;
-
+    
     private void Awake()
     {
         if (Instance != null)

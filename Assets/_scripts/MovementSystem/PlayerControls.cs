@@ -1,16 +1,32 @@
-using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterMovement),typeof(PlayerInput))]
 public class PlayerControls : MonoBehaviour
 {
-    private CharacterMovement _charMovement;
-    private DialogueActor _playerActor;
-    private PlayerInput _playerInput;
-    private InputAction _moveAction;
-    private InputAction _jumpAction;
-    private InputAction _interactAction;
+    [HideInInspector] public CharacterMovement _charMovement;
+    [HideInInspector] public DialogueActor _playerActor;
+    [HideInInspector] public PlayerInput _playerInput;
+    [HideInInspector] public InputAction _moveAction;
+    [HideInInspector] public InputAction _jumpAction;
+    [HideInInspector] public InputAction _interactAction;
+    [SerializeField] private EventSystem _eventSystem;
+    public static EventSystem eventSystem
+    {
+        get { return Instance._eventSystem; }
+    }
+
+    public static PlayerControls Instance;
+    
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(this);
+        }
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -28,4 +44,19 @@ public class PlayerControls : MonoBehaviour
     {
         _charMovement.Move(_moveAction.ReadValue<Vector2>());
     }
+
+    public static void SwitchToMovementInputs()
+    {
+        Instance._playerInput.SwitchCurrentActionMap("Movement");
+    }
+    public static void SwitchToUIInputs()
+    {
+        Instance._playerInput.SwitchCurrentActionMap("UI");
+    }
+    public void SwitchToCombatInputs()
+    {
+        Instance._playerInput.SwitchCurrentActionMap("Combat");
+        
+    }
+    
 }

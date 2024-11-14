@@ -5,10 +5,11 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler
 {
     [Header("Elements")] 
     [SerializeField] private TMP_Text _buttonText;
+    [SerializeField] private Button _button;
 
     [Header("Button Settings")] 
     [SerializeField] private Color _normalTextColor = Color.black;
@@ -17,14 +18,12 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     [SerializeField] private int _normalTextSize = 40;
     [SerializeField] private int _hoverTextSize = 40;
 
-    private Button _button;
     private Choice _choice;
 
     private void Start()
     {
         _buttonText.color = _normalTextColor;
         _buttonText.fontSize = _normalTextSize;
-        _button = GetComponent<Button>();
         _button.onClick.AddListener(OnButtonClicked);
         ChoiceBox.currentButtons.Add(this);
     }
@@ -71,7 +70,12 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
 
     #endregion
-
+    
+    public void Select()
+    {
+        _button.Select();
+    }
+    
     public void OnPointerEnter(PointerEventData eventData)
     {
         _buttonText.color = _hoverTextColor;
@@ -79,6 +83,18 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
 
     public void OnPointerExit(PointerEventData eventData)
+    {
+        _buttonText.color = _normalTextColor;
+        _buttonText.fontSize = _normalTextSize;
+    }
+
+    public void OnSelect(BaseEventData eventData)
+    {
+        _buttonText.color = _hoverTextColor;
+        _buttonText.fontSize = _hoverTextSize;    
+    }
+
+    public void OnDeselect(BaseEventData eventData)
     {
         _buttonText.color = _normalTextColor;
         _buttonText.fontSize = _normalTextSize;

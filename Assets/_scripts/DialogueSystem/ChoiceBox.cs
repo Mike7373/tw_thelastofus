@@ -29,7 +29,7 @@ public class ChoiceBox : MonoBehaviour
             
             if (i == 0)
             {
-                button.GetComponent<Button>().Select();
+                button.Select();
                 buttonHeight = button.GetComponent<RectTransform>().sizeDelta.y;
             }
         }
