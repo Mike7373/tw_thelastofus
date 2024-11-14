@@ -1,33 +1,42 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(DialogueBrain))]
 public class DialogueActor : MonoBehaviour
 {
     #region Fields
 
-    [HorizontalGroup("ActorData", 75)] [PreviewField(75)] [HideLabel] [SerializeField]
-    private Sprite _icon;
+    [HorizontalGroup("ActorData", 100)] [PreviewField(100)] [HideLabel] [SerializeField]
+    protected Sprite _icon;
 
     [VerticalGroup("ActorData/Info")] [LabelWidth(100)] [SerializeField]
-    private string _actorName;
+    protected string _actorName;
 
     [VerticalGroup("ActorData/Info")] [LabelWidth(100)] [SerializeField]
-    private ActorType _actorType;
+    protected ActorType _actorType;
 
     [VerticalGroup("ActorData/Info")] [LabelWidth(100)] [SerializeField]
-    private string _actorID;
+    protected string _actorID;
 
     [VerticalGroup("ActorData/Info")] [LabelWidth(100)] [SerializeField]
-    private bool _isPlayer;
+    protected bool _isPlayer;
+
+    [VerticalGroup("ActorData/Info")] [LabelWidth(100)] [SerializeField] 
+    protected SpriteRenderer _interactionImg;
+    
+    [VerticalGroup("ActorData/Info")] [LabelWidth(100)] [SerializeField] 
+    protected Collider _actorRange;
 
     public bool IsPlayer
     {
         get { return _isPlayer; }
     }
-    private static List<DialogueActor> _actorInstances = new();
+    protected static List<DialogueActor> _actorInstances = new();
+    protected static DialogueActor _currentInteractionActor;
 
     #endregion
 
@@ -69,6 +78,14 @@ public class DialogueActor : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (_interactionImg != null)
+        {
+            _interactionImg.enabled = false;
+        }
+    }
+
     /// <summary>
     /// Restituisce l'istanza dell'actor a cui appartiene l'id passato come parametro
     /// </summary>
@@ -86,5 +103,40 @@ public class DialogueActor : MonoBehaviour
 
         Debug.LogWarning($"[DialogueActor] FindActorByID is returning a null value! ID:{id} can't be found.");
         return null;
+    }
+
+    /// <summary>
+    /// Inizia un dialgo con i dati presenti nel brain
+    /// </summary>
+    public void Interact(InputAction.CallbackContext callbackContext)
+    {
+        if (_currentInteractionActor != null)
+        {
+            _currentInteractionActor.GetComponent<DialogueBrain>().StartDialogue();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.TryGetComponent<DialogueActor>(out DialogueActor actor))
+        {
+            if (actor._isPlayer)
+            {
+                _interactionImg.enabled = true;
+                _currentInteractionActor = this;
+            }
+        }
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.TryGetComponent<DialogueActor>(out DialogueActor actor))
+        {
+            if (actor._isPlayer)
+            {
+                _interactionImg.enabled = false;
+                _currentInteractionActor = null;
+            }
+        }
     }
 }
