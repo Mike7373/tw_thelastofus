@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/_PuppetDollHunting/Combat.unity
+    guid: 375d997fcb6b6a342ad75cb9ace9e02a
+  - enabled: 1
+    path: Assets/_PuppetDollHunting/Exploration.unity
+    guid: 988c71f8d4fa0a2499bcf6295dc0e189
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 7d2a5fbaf9a2ab648bcb30d19c1ef23f, type: 3}
   m_UseUCBPForAssetBundles: 0

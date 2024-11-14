@@ -12,6 +12,7 @@ public class PlayerControls : MonoBehaviour
     [HideInInspector] public InputAction _jumpAction;
     [HideInInspector] public InputAction _interactAction;
     [SerializeField] private EventSystem _eventSystem;
+    [SerializeField] private FightTower _tower;
     public static EventSystem eventSystem
     {
         get { return Instance._eventSystem; }
@@ -38,6 +39,7 @@ public class PlayerControls : MonoBehaviour
         //_jumpAction.performed += _charMovement.Jump;
         _interactAction = _playerInput.actions.FindAction("InteractAction");
         _interactAction.started += _playerActor.Interact;
+        _interactAction.started += _tower.Interact;
     }
 
     private void FixedUpdate()
