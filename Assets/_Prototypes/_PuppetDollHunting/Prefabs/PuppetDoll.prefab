@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5037585694670529867}
-  - component: {fileID: 7158155152936396971}
+  - component: {fileID: 1121116441072554844}
   m_Layer: 0
   m_Name: PuppetDoll
   m_TagString: Untagged
@@ -34,28 +34,22 @@ Transform:
   - {fileID: 6786583418130923873}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &7158155152936396971
-Animator:
-  serializedVersion: 7
+--- !u!114 &1121116441072554844
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023906648978861833}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f05d295e74d454fb56cd0c79628c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 25
+  _animator: {fileID: 7766302283588170144}
+  _healthBar: {fileID: 0}
+  _enemy: {fileID: 0}
 --- !u!1 &3190869646121500854
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,6 +62,7 @@ GameObject:
   - component: {fileID: 2469126084819553881}
   - component: {fileID: 7563007713577344242}
   - component: {fileID: 7772980336798521226}
+  - component: {fileID: 7766302283588170144}
   m_Layer: 0
   m_Name: WallTorch
   m_TagString: Untagged
@@ -84,7 +79,7 @@ Transform:
   m_GameObject: {fileID: 3190869646121500854}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 0.065, y: 0.049, z: -0.093}
+  m_LocalPosition: {x: 0.32, y: 0.304, z: -0.093}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -165,6 +160,28 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8081744627282208943, guid: cb48a2b3c9f5c314db89b951881ad1a3, type: 3}
+--- !u!95 &7766302283588170144
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190869646121500854}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c809713fe7c00f640831b01e7f129932, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3267115098602217483
 GameObject:
   m_ObjectHideFlags: 0

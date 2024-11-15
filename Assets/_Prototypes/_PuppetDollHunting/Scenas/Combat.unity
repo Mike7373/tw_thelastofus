@@ -349,6 +349,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2006271265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &409080462 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1266363712619122947, guid: bfde695ce6d230a4180d0509a31b7ef2, type: 3}
+  m_PrefabInstance: {fileID: 784391512025766457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &751232878
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +418,7 @@ GameObject:
   - component: {fileID: 1422033368}
   - component: {fileID: 1425520802}
   - component: {fileID: 1424014764}
+  - component: {fileID: 1425520803}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -467,6 +479,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422288172}
   m_Mesh: {fileID: 4300000, guid: 6f8500d9b2e1cd340be53bee0f9b8962, type: 3}
+--- !u!95 &1425520803
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422288172}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 756282ad50f391944a79d349f3b9a9c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1434208221
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,10 +838,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1266363712619122947, guid: bfde695ce6d230a4180d0509a31b7ef2, type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2635357265160444882, guid: bfde695ce6d230a4180d0509a31b7ef2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -849,6 +879,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PuppetDoll
       objectReference: {fileID: 0}
+    - target: {fileID: 1121116441072554844, guid: 83b3df1c196de3143b1add0262e9ee73, type: 3}
+      propertyPath: _enemy
+      value: 
+      objectReference: {fileID: 1425520803}
+    - target: {fileID: 1121116441072554844, guid: 83b3df1c196de3143b1add0262e9ee73, type: 3}
+      propertyPath: _healthBar
+      value: 
+      objectReference: {fileID: 409080462}
     - target: {fileID: 5037585694670529867, guid: 83b3df1c196de3143b1add0262e9ee73, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5
