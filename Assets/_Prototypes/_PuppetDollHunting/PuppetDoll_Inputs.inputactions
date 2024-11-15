@@ -228,9 +228,18 @@
             "id": "fe24d433-850f-43a0-93ea-8f5797972807",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "Button",
+                    "name": "Rotate",
+                    "type": "Value",
                     "id": "3ad6b724-d45f-4bdf-aac0-57b96f5e7d26",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Hit",
+                    "type": "Button",
+                    "id": "59b55063-36b0-44ce-9437-7ffa2cc400ca",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -241,11 +250,88 @@
                 {
                     "name": "",
                     "id": "af81f1e4-0b41-4333-9474-a7d5ee669035",
-                    "path": "",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "KeyboardRotation",
+                    "id": "d60bb18f-27d9-404f-88a6-386b921c44dc",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Rotate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Up",
+                    "id": "098f742d-1e9c-4aa3-98d0-267484bce482",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Down",
+                    "id": "7b2d61e9-6cd6-478f-bf9e-3eca1e564c53",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "c35db27d-bdc9-4c9c-84bb-c8ed082f7dd1",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "e2415255-0772-4c9f-9f69-5ee955f40e42",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "0de35c04-30d1-4cc0-a620-e6b2b850cc24",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Hit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9466ee22-2a30-4cc7-89d6-14f7bc859469",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Hit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
