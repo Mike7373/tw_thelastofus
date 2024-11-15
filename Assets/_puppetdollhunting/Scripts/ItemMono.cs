@@ -15,9 +15,9 @@ public class ItemMono : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<InventoryMono>(out InventoryMono inventory) && !inventory.GetInventory.IsFull())
+        if (other.TryGetComponent<InventoryMono>(out InventoryMono inventory) && !inventory.Inventory.IsFull())
         {
-            inventory.GetInventory.AddItem(_item, out int index);
+            inventory.Inventory.AddItem(_item, out int index);
             inventory.InvUI.AddItem(_sprite, index);
             Destroy(gameObject);
         }

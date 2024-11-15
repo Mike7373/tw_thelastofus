@@ -72,6 +72,6 @@ public class Inventory
 
     public void UseItem(int index)
     {
-        
+        _itemList[index] = null;
     }
 }

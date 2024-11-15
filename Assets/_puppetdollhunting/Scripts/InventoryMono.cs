@@ -13,12 +13,16 @@ public class InventoryMono : MonoBehaviour
     
     #region PROPERTIES
 
-    public Inventory GetInventory => _inventory;
+    public Inventory Inventory
+    {
+        get => _inventory;
+        set => _inventory = value;
+    }
 
     public InventoryUI InvUI
     {
         get => _invUI;
-        set{}
+        set => _invUI = value;
     }
 
     #endregion
@@ -26,15 +30,34 @@ public class InventoryMono : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        if (Instance != null)
         {
             Destroy(this);
         }
         Instance = this;
     }
 
-    private void Start()
+    private void Update()
     {
-        _inventory = new Inventory(_invUI.SlotList.Count);
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            _inventory.UseItem(0);
+            _invUI.RemoveItem(0);
+        }
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            _inventory.UseItem(1);
+            _invUI.RemoveItem(1);
+        }
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            _inventory.UseItem(2);
+            _invUI.RemoveItem(2);
+        }
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            _inventory.UseItem(3);
+            _invUI.RemoveItem(3);
+        }
     }
 }

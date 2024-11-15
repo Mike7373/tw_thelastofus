@@ -13,6 +13,7 @@ public class InventoryUI : MonoBehaviour
     private void Start()
     {
         InventoryMono.Instance.InvUI = this;
+        InventoryMono.Instance.Inventory = new Inventory(SlotList.Count);;
     }
 
     public void AddItem(Sprite sprite, int index)
