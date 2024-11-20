@@ -4,11 +4,12 @@ using UnityEngine;
 namespace ArcheoDating
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class DragDrop : MonoBehaviour
+    public class ItemDragDrop : MonoBehaviour
     {
         private Vector3 _mousePosition;
         private float _yPos;
         private Rigidbody _rb;
+        public bool isDragging;
 
         private void Start()
         {
@@ -26,6 +27,7 @@ namespace ArcheoDating
             _mousePosition = Input.mousePosition - GetMousePosition();
             _rb.isKinematic = true;
             Cursor.visible = false;
+            isDragging = true;
         }
 
         private void OnMouseDrag()
@@ -38,6 +40,7 @@ namespace ArcheoDating
         {
             _rb.isKinematic = false;
             Cursor.visible = true;
+            isDragging = false;
         }
     }
 }
