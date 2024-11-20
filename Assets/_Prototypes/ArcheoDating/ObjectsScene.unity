@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c5c1f12d1221140aa285a6a7c6a342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 5
+  _rotationSpeed: 2
 --- !u!1 &206502728
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c5c1f12d1221140aa285a6a7c6a342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 5
+  _rotationSpeed: 2
 --- !u!1 &400584444
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +769,7 @@ GameObject:
   - component: {fileID: 509358496}
   - component: {fileID: 509358495}
   - component: {fileID: 509358494}
+  - component: {fileID: 509358497}
   m_Layer: 5
   m_Name: DateButton
   m_TagString: Untagged
@@ -839,7 +840,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 509358495}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 509358497}
+        m_TargetAssemblyTypeName: DateButton, Assembly-CSharp
+        m_MethodName: Date
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &509358495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,6 +891,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509358492}
   m_CullTransparentMesh: 1
+--- !u!114 &509358497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509358492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0628bbabd6b722547839deac2ed4696a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &656786724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1103,7 +1128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c5c1f12d1221140aa285a6a7c6a342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 5
+  _rotationSpeed: 2
 --- !u!1 &1047775105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,7 +1432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c5c1f12d1221140aa285a6a7c6a342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 5
+  _rotationSpeed: 2
 --- !u!1 &1431767764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,7 +1675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c5c1f12d1221140aa285a6a7c6a342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 5
+  _rotationSpeed: 2
 --- !u!1 &1792731829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2100,7 +2125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c5c1f12d1221140aa285a6a7c6a342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 5
+  _rotationSpeed: 2
 --- !u!1 &5891631525109557000
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,7 +2236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c5c1f12d1221140aa285a6a7c6a342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 5
+  _rotationSpeed: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

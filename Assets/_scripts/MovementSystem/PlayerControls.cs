@@ -52,12 +52,12 @@ public class PlayerControls : MonoBehaviour
 
     public static void SwitchToMovementInputs()
     {
-        Instance._playerInput.SwitchCurrentActionMap("Movement");
+        Instance?._playerInput.SwitchCurrentActionMap("Movement");
     }
 
     public static void SwitchToUIInputs()
     {
-        Instance._playerInput.SwitchCurrentActionMap("UI");
+        Instance?._playerInput.SwitchCurrentActionMap("UI");
     }
 
     public void SwitchToCombatInputs()

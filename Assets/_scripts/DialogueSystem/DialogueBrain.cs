@@ -23,7 +23,7 @@ public class DialogueBrain : MonoBehaviour
 
     private void Start()
     {
-        dialogueBox.gameObject.SetActive(false);
+        //dialogueBox.gameObject.SetActive(false);
     }
 
     private void OnDisable()

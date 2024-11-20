@@ -10,7 +10,7 @@ public class ChoiceBox : MonoBehaviour
     private RectTransform _boxSize;
     public static List<ChoiceButton> currentButtons = new();
 
-    private void Start()
+    private void Awake()
     {
         _boxSize = _buttonsContainer.GetComponent<RectTransform>();
     }

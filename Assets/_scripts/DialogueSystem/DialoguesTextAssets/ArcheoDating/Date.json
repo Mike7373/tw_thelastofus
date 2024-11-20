@@ -1,0 +1,59 @@
+{
+  "sentenceList": [
+    {
+      "actorID": "_ham",
+      "sentenceID": "0",
+      "text": "Come siamo finiti qui?",
+      "choices": [
+        {
+          "text": "Next (premi spazio)",
+          "nextSentence": "Parlare"
+        }
+      ]
+    },
+    {
+      "actorID": "_ham",
+      "sentenceID": "Parlare",
+      "text": "Ma soprattutto, perchè parlo? non ho una bocca!",
+      "choices": [
+        {
+          "text": "Next",
+          "nextSentence": "Bocca"
+        }
+      ]
+    },
+    {
+      "actorID": "_onigiri",
+      "sentenceID": "Bocca",
+      "text": "Sei sicuro di non avere una bocca? Magari la tua è nascosta, come la mia, ma senza non potresti parlare...",
+      "choices": [
+        {
+          "text": "Next",
+          "nextSentence": "Scoprire"
+        }
+      ]
+    },
+    {
+      "actorID": "_ham",
+      "sentenceID": "Scoprire",
+      "text": "Forse hai ragione... Beh, vieni più vicino, magari da qui la mia bocca la vedi ;)",
+      "choices": [
+        {
+          "text": "Next",
+          "nextSentence": "Vieni"
+        }
+      ]
+    },
+    {
+      "actorID": "_onigiri",
+      "sentenceID": "Vieni",
+      "text": "Certo! Vengo subito!",
+      "choices": [
+        {
+          "text": "Chiudi (non ti è permesso proseguire la conversazione, è soggetta a limiti di età)",
+          "nextSentence": ""
+        }
+      ]
+    }
+  ]
+}
