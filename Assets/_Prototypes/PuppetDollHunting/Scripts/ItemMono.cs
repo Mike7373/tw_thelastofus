@@ -1,25 +1,28 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
-public class ItemMono : MonoBehaviour
+namespace PuppetDollHunting
 {
-    [SerializeField] private string _name;
-    [SerializeField] private Sprite _sprite;
-    
-    private Item _item;
-
-    private void Start()
+    [RequireComponent(typeof(Collider))]
+    public class ItemMono : MonoBehaviour
     {
-        _item = new Item(_name, _sprite);
-    }
+        [SerializeField] private string _name;
+        [SerializeField] private Sprite _sprite;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent<InventoryMono>(out InventoryMono inventory) && !inventory.Inventory.IsFull())
+        private Item _item;
+
+        private void Start()
         {
-            inventory.Inventory.AddItem(_item, out int index);
-            inventory.InvUI.AddItem(_sprite, index);
-            Destroy(gameObject);
+            _item = new Item(_name, _sprite);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent<InventoryMono>(out InventoryMono inventory) && !inventory.Inventory.IsFull())
+            {
+                inventory.Inventory.AddItem(_item, out int index);
+                inventory.InvUI.AddItem(_sprite, index);
+                Destroy(gameObject);
+            }
         }
     }
 }

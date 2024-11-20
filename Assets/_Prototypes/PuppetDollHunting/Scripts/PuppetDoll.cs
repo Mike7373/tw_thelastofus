@@ -1,25 +1,31 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PuppetDoll : MonoBehaviour
+namespace PuppetDollHunting
 {
-    [Header("Params")] [SerializeField] [Range(0, 100)]
-    private int _damage = 25; 
-    [Header("References")]
-    [SerializeField] private Animator _animator;
-    [SerializeField] private Slider _healthBar;
-    [SerializeField] private Animator _enemy;
-
-    private void Update()
+    public class PuppetDoll : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !_animator.GetCurrentAnimatorStateInfo(0).IsName("Hit") && _healthBar.value > 0)
+        [Header("Params")] [SerializeField] [Range(0, 100)]
+        private int _damage = 25;
+
+        [Header("References")] [SerializeField]
+        private Animator _animator;
+
+        [SerializeField] private Slider _healthBar;
+        [SerializeField] private Animator _enemy;
+
+        private void Update()
         {
-            _animator.SetTrigger("Hit");
-            _healthBar.value -= _damage;
-            if (_healthBar.value <= 0)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !_animator.GetCurrentAnimatorStateInfo(0).IsName("Hit") &&
+                _healthBar.value > 0)
             {
-                _healthBar.value = 0;
-                _enemy.SetTrigger("Die");
+                _animator.SetTrigger("Hit");
+                _healthBar.value -= _damage;
+                if (_healthBar.value <= 0)
+                {
+                    _healthBar.value = 0;
+                    _enemy.SetTrigger("Die");
+                }
             }
         }
     }

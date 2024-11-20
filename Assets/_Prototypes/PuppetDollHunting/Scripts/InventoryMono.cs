@@ -1,63 +1,70 @@
 using System;
 using UnityEngine;
 
-public class InventoryMono : MonoBehaviour
+namespace PuppetDollHunting
 {
-    #region FIELDS
-
-    private Inventory _inventory;
-    private InventoryUI _invUI;
-    public static InventoryMono Instance;
-
-    #endregion
-    
-    #region PROPERTIES
-
-    public Inventory Inventory
+    public class InventoryMono : MonoBehaviour
     {
-        get => _inventory;
-        set => _inventory = value;
-    }
+        #region FIELDS
 
-    public InventoryUI InvUI
-    {
-        get => _invUI;
-        set => _invUI = value;
-    }
+        private Inventory _inventory;
+        private InventoryUI _invUI;
+        public static InventoryMono Instance;
 
-    #endregion
-    
+        #endregion
 
-    private void Awake()
-    {
-        if (Instance != null)
-        {
-            Destroy(this);
-        }
-        Instance = this;
-    }
+        #region PROPERTIES
 
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Alpha1))
+        public Inventory Inventory
         {
-            _inventory.UseItem(0);
-            _invUI.RemoveItem(0);
+            get => _inventory;
+            set => _inventory = value;
         }
-        if (Input.GetKey(KeyCode.Alpha2))
+
+        public InventoryUI InvUI
         {
-            _inventory.UseItem(1);
-            _invUI.RemoveItem(1);
+            get => _invUI;
+            set => _invUI = value;
         }
-        if (Input.GetKey(KeyCode.Alpha3))
+
+        #endregion
+
+
+        private void Awake()
         {
-            _inventory.UseItem(2);
-            _invUI.RemoveItem(2);
+            if (Instance != null)
+            {
+                Destroy(this);
+            }
+
+            Instance = this;
         }
-        if (Input.GetKey(KeyCode.Alpha4))
+
+        private void Update()
         {
-            _inventory.UseItem(3);
-            _invUI.RemoveItem(3);
+            if (Input.GetKey(KeyCode.Alpha1))
+            {
+                _inventory.UseItem(0);
+                _invUI.RemoveItem(0);
+            }
+
+            if (Input.GetKey(KeyCode.Alpha2))
+            {
+                _inventory.UseItem(1);
+                _invUI.RemoveItem(1);
+            }
+
+            if (Input.GetKey(KeyCode.Alpha3))
+            {
+                _inventory.UseItem(2);
+                _invUI.RemoveItem(2);
+            }
+
+            if (Input.GetKey(KeyCode.Alpha4))
+            {
+                _inventory.UseItem(3);
+                _invUI.RemoveItem(3);
+            }
         }
     }
 }

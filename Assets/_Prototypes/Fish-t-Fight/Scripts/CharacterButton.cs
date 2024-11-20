@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CharacterButton : MonoBehaviour
+namespace FishFight
 {
-    public void Select()
+    public class CharacterButton : MonoBehaviour
     {
-        SceneManager.LoadScene("Fight");
+        public void Select()
+        {
+            SceneManager.LoadScene("Fight");
+        }
     }
 }

@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using PuppetDollHunting;
 
-[RequireComponent(typeof(CharacterMovement),typeof(PlayerInput))]
+[RequireComponent(typeof(CharacterMovement), typeof(PlayerInput))]
 public class PlayerControls : MonoBehaviour
 {
     [HideInInspector] public CharacterMovement _charMovement;
@@ -13,19 +14,21 @@ public class PlayerControls : MonoBehaviour
     [HideInInspector] public InputAction _interactAction;
     [SerializeField] private EventSystem _eventSystem;
     [SerializeField] private FightTower _tower;
+
     public static EventSystem eventSystem
     {
         get { return Instance._eventSystem; }
     }
 
     public static PlayerControls Instance;
-    
+
     private void Awake()
     {
         if (Instance != null)
         {
             Destroy(this);
         }
+
         Instance = this;
     }
 
@@ -51,14 +54,14 @@ public class PlayerControls : MonoBehaviour
     {
         Instance._playerInput.SwitchCurrentActionMap("Movement");
     }
+
     public static void SwitchToUIInputs()
     {
         Instance._playerInput.SwitchCurrentActionMap("UI");
     }
+
     public void SwitchToCombatInputs()
     {
         Instance._playerInput.SwitchCurrentActionMap("Combat");
-        
     }
-    
 }

@@ -2,27 +2,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryUI : MonoBehaviour
+namespace PuppetDollHunting
 {
-    [SerializeField] private List<Image> _slotList = new();
-    public List<Image> SlotList
+    public class InventoryUI : MonoBehaviour
     {
-        get { return _slotList; }
-    }
+        [SerializeField] private List<Image> _slotList = new();
 
-    private void Start()
-    {
-        InventoryMono.Instance.InvUI = this;
-        InventoryMono.Instance.Inventory = new Inventory(SlotList.Count);;
-    }
+        public List<Image> SlotList
+        {
+            get { return _slotList; }
+        }
 
-    public void AddItem(Sprite sprite, int index)
-    {
-        _slotList[index].sprite = sprite;
-    }
+        private void Start()
+        {
+            InventoryMono.Instance.InvUI = this;
+            InventoryMono.Instance.Inventory = new Inventory(SlotList.Count);
+            ;
+        }
 
-    public void RemoveItem(int index)
-    {
-        _slotList[index].sprite = null;
+        public void AddItem(Sprite sprite, int index)
+        {
+            _slotList[index].sprite = sprite;
+        }
+
+        public void RemoveItem(int index)
+        {
+            _slotList[index].sprite = null;
+        }
     }
 }
