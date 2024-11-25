@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using PuppetDollHunting;
 
 [RequireComponent(typeof(DialogueBrain))]
 public class DialogueActor : MonoBehaviour
@@ -136,10 +135,6 @@ public class DialogueActor : MonoBehaviour
                 _interactionImg.enabled = false;
                 _currentInteractionActor = null;
             }
-        }
-        if (other.TryGetComponent<FightTower>(out FightTower tower))
-        {
-            _interactionImg.enabled = false;
         }
     }
 }

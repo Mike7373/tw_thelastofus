@@ -45,7 +45,6 @@ public class DialogueBrain : MonoBehaviour
     /// <returns></returns>
     public void StartDialogue()
     {
-        PlayerControls.SwitchToUIInputs();
         List<Sentence> dialogue = LoadCurrentDialogue();
         _currentDialogue = dialogue.ToDictionary(sentence => sentence.sentenceID);
         dialogueBox.gameObject.SetActive(true);
@@ -67,9 +66,7 @@ public class DialogueBrain : MonoBehaviour
             _dialogueIndex++;
         }
         dialogueBox.gameObject.SetActive(false);
-        PlayerControls.SwitchToMovementInputs();
         ChoiceBox.ClearButtons();
-
     }
 
     /// <summary>

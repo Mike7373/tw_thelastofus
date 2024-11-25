@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Prototypes/ArcheoDating/ObjectsScene.unity
     guid: 771b8c4b7519f944eab66f6c2a5c4f96
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Prototypes/ArcheoDating/DateScene.unity
     guid: aade34d2e6f7b294cb58828dbe8e4663
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Prototypes/Fish-t-Fight/CharacterSelection.unity
     guid: bc4152816001fb34fb241f903eb17e13
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Prototypes/Fish-t-Fight/Fight.unity
     guid: 1c1098ec03fbc8b4192d48fe90dd8cdd
   - enabled: 0
